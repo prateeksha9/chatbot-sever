@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const port = process.env.PORT || 3000;
 const http = require("http");
 const cors = require("cors");
 const { Server } = require("socket.io");
@@ -36,6 +37,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => {
+server.listen(port, () => {
   console.log("SERVER RUNNING");
 });
